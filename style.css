@@ -120,17 +120,18 @@ button {
   padding: 36px;
   text-align: center;
   background-color:white;
-  height: 750px;
+  height: 710px;
 }
 
 .split {
   height: 1px;
-  width: 700px;
+  width: 800px;
   margin: 0 auto;
+  color: white
 }
 
 .dict {
-  margin-top: 70px;
+  margin-top: 50px;
 }
 
 .footer h4, .dict h4 {
