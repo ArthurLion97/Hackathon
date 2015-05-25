@@ -64,6 +64,7 @@ button {
   font-size: 16px;
   margin: 0 0 0 20px;
   color: white;
+  display: inline-block;
 }
 
 .banner {
@@ -120,17 +121,18 @@ button {
   padding: 36px;
   text-align: center;
   background-color:white;
-  height: 750px;
+  height: 710px;
 }
 
 .split {
-  height: 1px;
-  width: 700px;
-  margin: 0 auto;
+  height: 0px;
+  margin: 0 20px;
+  border: none;
+  border-top: #DFE4E7 1px solid;
 }
 
 .dict {
-  margin-top: 70px;
+  margin-top: 50px;
 }
 
 .footer h4, .dict h4 {
@@ -217,4 +219,34 @@ button {
   text-align: center;
   position: absolute;
   bottom: 0;
+}
+
+.wide {
+  display: block;
+}
+
+.narrow {
+  display: none;
+}
+
+@media (max-width: 1000px) {
+  .copyright, .footer, .container, .navbar {
+    width: 100%;
+  }
+  
+  .container {
+    height: auto;
+  }
+  
+  .banner-intro {
+    padding: 0 20px;
+  }
+  
+  .wide {
+    display: none;
+  }
+
+  .narrow {
+    display: block;
+  }
 }
