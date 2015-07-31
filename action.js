@@ -22,9 +22,36 @@
  * SOFTWARE.
  */
 
+var judgementDate = new Date(2015, 8, 22, 8, 0, 0).getTime();
+var countdownLoading = true;
+
+function numberPadding(num, padding) {
+  var strnum = String(num);
+  while(strnum.length < padding) strnum = "0" + strnum;
+  return strnum;
+}
+
+function updateTimeDiff(value) {
+  if(countdownLoading) {
+    countdownLoading=false;
+    $(".footer-countdown").css("opacity","1");
+  }
+  value = Math.round(value / 1000 / 60); // Ignore millsec & sec
+  $("#cd-min").html(numberPadding(value % 60, 2));
+  value = Math.round(value / 60);
+  $("#cd-hour").html(numberPadding(value % 24, 2));
+  value = Math.round(value / 24);
+  $("#cd-day").html(numberPadding(value, 2));
+}
+
 $(document).ready(function () {
   'use strict';
   $(".access-home-btn").click(function (e) {
     window.open("http://www.illumer.org/", "hachation-child");
   });
+  
+  window.setInterval(function() {
+    var diff = judgementDate - Date.now();
+    updateTimeDiff(diff);
+  },1000);
 });
