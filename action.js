@@ -47,11 +47,15 @@ function updateTimeDiff(value) {
 $(document).ready(function () {
   'use strict';
   $(".access-home-btn").click(function (e) {
-    window.open("http://www.illumer.org/", "hachation-child");
+    window.open("http://www.illumer.org/", "hachathon-child");
   });
   
   window.setInterval(function() {
     var diff = judgementDate - Date.now();
     updateTimeDiff(diff);
   },1000);
+  
+  $(".banner-join-btn").click(function(e) {
+    window.open("http://www.huodongxing.com/event/2293991042000", "hackathon-child");
+  });
 });
